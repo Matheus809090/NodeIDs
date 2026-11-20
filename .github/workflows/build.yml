@@ -43,11 +43,11 @@ jobs:
           choco install llvm --version=22.1.0 -y
           echo "C:\Program Files\LLVM\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       
-            - name: Build the mod
-              uses: geode-sdk/build-geode-mod@main
-              with:
-                combine: true
-                target: ${{ matrix.config.target }}
+      - name: Build the mod
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          combine: true
+          target: ${{ matrix.config.target }}
       
   package:
     name: Package builds
